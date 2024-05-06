@@ -1,0 +1,26 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+@apiUrl=https://localhost:1338
+
+@ordinaryUserToken=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IklUVVN0dWRlbnQiLCJzdWIiOiJJVFVTdHVkZW50IiwianRpIjoiYTliNzA0ZjMiLCJhdWQiOlsiaHR0cDovL2xvY2FsaG9zdDo0MzQ2NyIsImh0dHBzOi8vbG9jYWxob3N0OjQ0MzY4IiwiaHR0cDovL2xvY2FsaG9zdDoxMzM3IiwiaHR0cHM6Ly9sb2NhbGhvc3Q6MTMzOCJdLCJuYmYiOjE3MTUwMjUzMTIsImV4cCI6MTcyMjk3NDExMiwiaWF0IjoxNzE1MDI1MzEzLCJpc3MiOiJkb3RuZXQtdXNlci1qd3RzIn0.tOj4lRa7CdHldU8Zldm_d1k9HBtpJcVwba2IxiokKVM
+@softwareCenterUserToken=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InN1ZUBhb2wuY29tIiwic3ViIjoic3VlQGFvbC5jb20iLCJqdGkiOiJjZjE1MTg3Iiwicm9sZSI6WyJTb2Z0d2FyZUNlbnRlciIsIkJvc3MiXSwiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3Q6NDM0NjciLCJodHRwczovL2xvY2FsaG9zdDo0NDM2OCIsImh0dHA6Ly9sb2NhbGhvc3Q6MTMzNyIsImh0dHBzOi8vbG9jYWxob3N0OjEzMzgiXSwibmJmIjoxNzE1MDI2MDQzLCJleHAiOjE4MDk2MzQwNDMsImlhdCI6MTcxNTAyNjA0NCwiaXNzIjoiZG90bmV0LXVzZXItand0cyJ9.Y6Eb1pGFNiReGgwHwAH3zjV46fDwIfowyB3zaZfEZd8
+
+# Members of the Software Center can add new items to our catalog of supported software.
+# We have a "COLLECTION" of supported software, and we want to APPEND a new subordinate resource (DOCUMENT) to that collection.
+
+POST {{apiUrl}}/catalog
+Authorization: {{softwareCenterUserToken}}
+Content-Type: application/json
+
+{
+  "title": "Visual Studio",
+  "description": "An Integrated Development Environment for .NET Developer son Windows"
+}
+
+
+###
+
+GET {{apiUrl}}/catalog
+
+###
+
+GET {{apiUrl}}/catalog/a52a2cd6-d132-4653-8df0-adbbfff83037
